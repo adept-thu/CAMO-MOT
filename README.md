@@ -1,14 +1,23 @@
 # CAMO-MOT
 This is the official code release of the paper [CAMO-MOT: Combined Appearance-Motion Optimization for 3D Multi-Object Tracking with Camera-LiDAR Fusion](填充网址).
 
+## News
+[2022-07-03] CAMO-MOT v0.1 on KITTI is released. we rank **4th** among all methods on **KITTI** Dataset for [MOT](http://www.cvlibs.net/datasets/kitti/eval_tracking.php). Check out CAMO-MOT's model zoo for [KITTI](填充网址). We are still working on writing the documentations and cleaning up the code. And We will release our model on **nuScenes** as soon as possible. :smiley:
+
+If you find our paper or code useful for you, please consider cite us by:
+
+```
+填写引用
+```
+
 ## Overview
 
 TODO
 
 ## Model Zoo
 
-The results are evaluated on the validation set of the
-KITTI [object tracking dataset](http://www.cvlibs.net/datasets/kitti/eval_tracking.php). 
+The results are evaluated on the validation set of the KITTI [object tracking dataset](http://www.cvlibs.net/datasets/kitti/eval_tracking.php). 
+
 ## Requirement
 
 The code has been tested in the following environment:
@@ -36,6 +45,8 @@ cd src/lib/model/networks/
 git clone https://github.com/CharlesShang/DCNv2
 cd DCNv2
 ./make.sh
+
+# KITTI
 
 ## Getting Started
 
@@ -108,22 +119,36 @@ Detections
 Finetune the additional link/start-end branches based on a pretrained detection model:
 
 ```shell
-CUDA_VISIBLE_DEVICES=2,3,5 python train.py tracking --exp_id kitti_train --same_aug --hm_disturb 0.05 --lost_disturb 0.2 --fp_disturb 0.1 --gpus 0,1,2,3  --batch_size 36 --num_workers 16 
---load_model ./weights/model_last.pth
+CUDA_VISIBLE_DEVICES=2,3,5 python train.py tracking --exp_id kitti_train --same_aug --hm_disturb 0.05 --lost_disturb 0.2 --fp_disturb 0.1 --gpus 0,1,2,3  --batch_size 36 --num_workers 16 --load_model ./weights/model_last.pth
 ```
 ### Testing
 
 Evaluate the tracking performance on the validation set:
 
 ```shell
-python test.py tracking --dataset kitti_tracking  --exp_id kitti_train --dataset_version test --pre_hm --track_thresh 0.4  --batch_size 1 --num_workers 16 --load_model ./weights/model_best_all.pth --max_age 16  --max_prediction_num_for_new_object 5 --init_score 0 --post_score 9 --latency 0 --apperance_thresh 0.01 --motion_thresh 10.5
+python test.py tracking --dataset kitti_tracking --exp_id kitti_train --dataset_version test --pre_hm --track_thresh 0.4  --batch_size 1 --num_workers 16 --load_model ./weights/model_best_all.pth --max_age 16  --max_prediction_num_for_new_object 5 --init_score 0 --post_score 0 --latency 0 --apperance_thresh 0.01 --motion_thresh 10.5
 ```
+
 The results should be similar to our entry shown below on the KITTI 2D MOT leaderboard. Note that we only have results for Car and Pedestrian because KITTI 2D MOT benchmark only supports to evaluate these two categories, not including the Cyclist. 
 
  Category       | HOTA (%) | MOTA (%) | MOTP (%)| MT (%) | ML (%) | IDS | FRAG |  FP  |   FN  
 --------------- |:--------:|:--------:|:-------:|:------:|:------:|:---:|:----:|:----:|:-----:
  *Car*          | 79.99    | 90.38    |  85.00  | 84.46  | 7.54   | 30  | 156  | 2337 | 942   
  *Pedestrian*   | 44.77    | 52.48    |  64.50  | 35.40  | 25.77  | 152 | 1133 | 8325 | 2525  
+ 
+ 
+# nuScenes
+TODO
+## Getting Started
+TODO
+### Dataset preparation
+TODO
+## Training & Testing
+TODO
+### Training
+TODO
+### Testing
+TODO
  
 ## Visualization
 
