@@ -1,4 +1,5 @@
 # CAMO-MOT
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/eagermot-3d-multi-object-tracking-via-sensor/3d-multi-object-tracking-on-nuscenes)](https://paperswithcode.com/sota/3d-multi-object-tracking-on-nuscenes?p=eagermot-3d-multi-object-tracking-via-sensor)
 This is the official code release of the paper [CAMO-MOT: Combined Appearance-Motion Optimization for 3D Multi-Object Tracking with Camera-LiDAR Fusion](填充网址).
 
 ## News
