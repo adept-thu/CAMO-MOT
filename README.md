@@ -29,14 +29,14 @@ You can find detailed results on KITTI **test** set on this [website](http://www
  
  ### Multi-object tracking(on nuScenes test set)
  
-                | AMOTA    | AMOTP   
+ Method         | AMOTA    | AMOTP   
 --------------- |:--------:|:--------:
  CAMO-MOT       | 0.753    | 0.472
  
 You can find detailed results on nuScenes **test** set on this [website](https://eval.ai/web/challenges/challenge-page/476/leaderboard/1321).
 Or you can view the accuracy trend of MOT algorithms on this [website](https://paperswithcode.com/sota/3d-multi-object-tracking-on-nuscenes?p=bevfusion-multi-task-multi-sensor-fusion-with)
 
-                | AMOTA    | AMOTP   
+ Method         | AMOTA    | AMOTP   
 --------------- |:--------:|:--------:
  CAMO-MOT       | 0.761    | 0.561
 
@@ -53,7 +53,7 @@ In the detection part, Many thanks to the following open-source projects:
 - [CenterPoint](https://github.com/tianweiy/CenterPoint)
 - [FocalConv](https://github.com/dvlab-research/FocalsConv)
 - [BEVFusion](https://github.com/mit-han-lab/bevfusion)
-We especially thank Yukang@yukang2017([FocalConv](https://github.com/dvlab-research/FocalsConv)) for his help.
+- We especially thank Yukang@yukang2017([FocalConv](https://github.com/dvlab-research/FocalsConv)) for his help.
 
 In the tracking part, Many thanks to the following open-source projects:
 - [DEFT](https://github.com/MedChaabane/DEFT)
