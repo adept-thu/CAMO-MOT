@@ -2,168 +2,70 @@
 This is the official code release of the paper [CAMO-MOT: Combined Appearance-Motion Optimization for 3D Multi-Object Tracking with Camera-LiDAR Fusion](填充网址).
 
 ## News
-[2022-07-03] CAMO-MOT v0.1 on KITTI is released. we rank **4th** among all methods on **KITTI** Dataset for [MOT](http://www.cvlibs.net/datasets/kitti/eval_tracking.php). Check out CAMO-MOT's model zoo for [KITTI](填充网址). We are still working on writing the documentations and cleaning up the code. And We will release our model on **nuScenes** as soon as possible. :smiley:
+[2022-08-03]  we rank **4th** among all methods on **KITTI** Dataset for [MOT](http://www.cvlibs.net/datasets/kitti/eval_tracking.php).
+[2022-08-04]  we rank **first** among all methods on **nuScenes** Dataset for [Tracking](https://www.nuscenes.org/tracking?externalData=all&mapData=all&modalities=Any). 
 
-If you find our paper or code useful for you, please consider cite us by:
+We are still working on writing the documentations and cleaning up the code. And We will release our model on **nuScenes/KITTI** as soon as possible. :smiley:
 
-```
-填写引用
-```
+## Results
 
-## Overview
-
-TODO
-
-## Model Zoo
-
-The results are evaluated on the validation set of the KITTI [object tracking dataset](http://www.cvlibs.net/datasets/kitti/eval_tracking.php). 
-
-## Requirement
-
-The code has been tested in the following environment:
-
-- Ubuntu 18.04 
-- Python 3.6
-- PyTorch 1.7.0
-- CUDA Toolkit 11.1
-
-## Installation
-
-1. Install [PyTorch](https://pytorch.org/get-started/locally/) and [CUDA](https://developer.nvidia.com/cuda-toolkit).
-
-2. Install other required Python packages:
-
-```shell
-pip install -r requirements.txt
-```
-
-3. Build and install the required CUDA modules via PyTorch and the CUDA toolkit:
-4. Install COCOAPI:
-pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
-5. Compile DCNv2
-cd src/lib/model/networks/
-git clone https://github.com/CharlesShang/DCNv2
-cd DCNv2
-./make.sh
-
-# KITTI
-
-## Getting Started
-
-### Dataset preparation
-
-Please download the official KITTI [object tracking dataset](http://www.cvlibs.net/datasets/kitti/eval_tracking.php).
-
-To generate the detection results, please use the following command to reformat the ground truth to
-KITTI's [object detection](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) format. You can create
-your own data splits by modifying `config/opts.py` file.
-You can download the Kitti tracking pose data from [here](https://drive.google.com/drive/folders/1Vw_Mlfy_fJY6u0JiCD-RMb6_m37QAXPQ?usp=sharing), and
-you can download the point-rcnn, second-iou and pv-rcnn detections from [here](https://drive.google.com/file/d/1zVWFGwRqF_CBP4DFJJa4nBcu-z6kpF1R/view?usp=sharing).~~~~
-```shell
-python tools/kitti_converter.py --data_root ${DATA_ROOT}
-```
-
-The final dataset organization should be like this (you can have your custom data root):
-
-To run this code, you should organize Kitti tracking dataset as below:
-```
-# Kitti Tracking Dataset       
-└── kitti_tracking
-       ├── testing 
-       |      ├──calib
-       |      |    ├──0000.txt
-       |      |    ├──....txt
-       |      |    └──0028.txt
-       |      ├──image_02
-       |      |    ├──0000
-       |      |    ├──....
-       |      |    └──0028
-       |      ├──pose
-       |      |    ├──0000
-       |      |    |    └──pose.txt
-       |      |    ├──....
-       |      |    └──0028
-       |      |         └──pose.txt
-       |      ├──label_02
-       |      |    ├──0000.txt
-       |      |    ├──....txt
-       |      |    └──0028.txt
-       |      └──velodyne
-       |           ├──0000
-       |           ├──....
-       |           └──0028      
-       └── training # the structure is same as testing set
-              ├──calib
-              ├──image_02
-              ├──pose
-              ├──label_02
-              └──velodyne 
-```
-Detections
-```
-└── point-rcnn
-       ├── training
-       |      ├──0000
-       |      |    ├──000001.txt
-       |      |    ├──....txt
-       |      |    └──000153.txt
-       |      ├──...
-       |      └──0020
-       └──testing 
-```
-
-## Training & Testing
-
-### Training
-
-Finetune the additional link/start-end branches based on a pretrained detection model:
-
-```shell
-CUDA_VISIBLE_DEVICES=2,3,5 python train.py tracking --exp_id kitti_train --same_aug --hm_disturb 0.05 --lost_disturb 0.2 --fp_disturb 0.1 --gpus 0,1,2,3  --batch_size 36 --num_workers 16 --load_model ./weights/model_last.pth
-```
-### Testing
-
-Evaluate the tracking performance on the validation set:
-
-```shell
-python test.py tracking --dataset kitti_tracking --exp_id kitti_train --dataset_version test --pre_hm --track_thresh 0.4  --batch_size 1 --num_workers 16 --load_model ./weights/model_best_all.pth --max_age 16  --max_prediction_num_for_new_object 5 --init_score 0 --post_score 0 --latency 0 --apperance_thresh 0.01 --motion_thresh 10.5
-```
-
-The results should be similar to our entry shown below on the KITTI 2D MOT leaderboard. Note that we only have results for Car and Pedestrian because KITTI 2D MOT benchmark only supports to evaluate these two categories, not including the Cyclist. 
+### Multi-object tracking(on KITTI test)
 
  Category       | HOTA (%) | MOTA (%) | MOTP (%)| MT (%) | ML (%) | IDS | FRAG |  FP  |   FN  
 --------------- |:--------:|:--------:|:-------:|:------:|:------:|:---:|:----:|:----:|:-----:
  *Car*          | 79.99    | 90.38    |  85.00  | 84.46  | 7.54   | 30  | 156  | 2337 | 942   
  *Pedestrian*   | 44.77    | 52.48    |  64.50  | 35.40  | 25.77  | 152 | 1133 | 8325 | 2525  
  
- 
-# nuScenes
-TODO
-## Getting Started
-TODO
-### Dataset preparation
-TODO
-## Training & Testing
-TODO
-### Training
-TODO
-### Testing
-TODO
- 
-## Visualization
+You can find detailed results on KITTI **test** set on this [website](http://www.cvlibs.net/datasets/kitti/eval_tracking_detail.php?result=b3be646ab7ac4935ad15cb81cc1e12a6d8db4983). 
 
-Please try the code under `tools/visualization` directory to visualize your 3D object tracking results and make an
-impressive video!
+### Multi-object tracking(on KITTI val)
+
+ Category       | HOTA (%) | MOTA (%) | IDS |  FP  |   FN  
+--------------- |:--------:|:--------:|:---:|:----:|:-----:
+ *Car*          | 82.91    | 91.96    | 1   | 302  | 371   
+ *Pedestrian*   | 50.99    | 64.75    | 70  | 2240 | 1140  
+ 
+ On KITTI, We use [PointGNN](https://github.com/WeijingShi/Point-GNN) as our detector.
+ 
+ ### Multi-object tracking(on nuScenes test set)
+ 
+                | AMOTA    | AMOTP   
+--------------- |:--------:|:--------:
+ CAMO-MOT       | 0.753    | 0.472
+ 
+You can find detailed results on nuScenes **test** set on this [website](https://eval.ai/web/challenges/challenge-page/476/leaderboard/1321).
+Or you can view the accuracy trend of MOT algorithms on this [website](https://paperswithcode.com/sota/3d-multi-object-tracking-on-nuscenes?p=bevfusion-multi-task-multi-sensor-fusion-with)
+
+                | AMOTA    | AMOTP   
+--------------- |:--------:|:--------:
+ CAMO-MOT       | 0.761    | 0.561
+
+ 
+On nuScenes, We use [BEVFusion](https://github.com/mit-han-lab/bevfusion) and [FocalConv](https://github.com/dvlab-research/FocalsConv) as our detectors.
 
 ## License
 
-`CAMO-MOT` is released under the MIT license.
+`CAMO-MOT` is released under the `MIT` license.
 
 ## Acknowledgement
 
-TODO
+In the detection part, Many thanks to the following open-source projects:
+- [CenterPoint](https://github.com/tianweiy/CenterPoint)
+- [FocalConv](https://github.com/dvlab-research/FocalsConv)
+- [BEVFusion](https://github.com/mit-han-lab/bevfusion)
+We especially thank Yukang@yukang2017([FocalConv](https://github.com/dvlab-research/FocalsConv)) for his help.
+
+In the tracking part, Many thanks to the following open-source projects:
+- [DEFT](https://github.com/MedChaabane/DEFT)
+- [EagerMOT](https://github.com/aleksandrkim61/EagerMOT)
 
 ## Citation
-
-TODO
+If you find our paper or code useful for you, please consider cite us by:grin::
+```
+@article{2022CAMOMOT,
+  title={CAMO-MOT: Combined Appearance-Motion Optimization for 3D Multi-Object Tracking with Camera-LiDAR Fusion},
+  author={Li Wang, Xinyu Zhang, Wenyuan Qin, Xiaoyu Li, Lei Yang, Zhiwei Li, Lei Zhu, Hong Wang and Jun Li},
+  year={2022}
+}
+```
 
