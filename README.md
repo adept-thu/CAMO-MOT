@@ -4,8 +4,6 @@ This is the official code release of the paper [CAMO-MOT: Combined Appearance-Mo
 
 ## News
 
-3D results: [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/CAMO-MOT/3d-multi-object-tracking-on-nuscenes)](https://paperswithcode.com/sota/3d-multi-object-tracking-on-nuscenes?p=CAMO-MOT)
-
 - 2022-08-04  we rank **first** among all methods on **nuScenes** Dataset for [Tracking](https://www.nuscenes.org/tracking?externalData=all&mapData=all&modalities=Any):blush:. 
 - 2022-08-03  we rank **4th** among all methods on **KITTI** Dataset for [MOT](http://www.cvlibs.net/datasets/kitti/eval_tracking.php):grinning:.
 
