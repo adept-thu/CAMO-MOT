@@ -2,8 +2,8 @@
 This is the official code release of the paper [CAMO-MOT: Combined Appearance-Motion Optimization for 3D Multi-Object Tracking with Camera-LiDAR Fusion](填充网址).
 
 ## News
-[2022-08-03]  we rank **4th** among all methods on **KITTI** Dataset for [MOT](http://www.cvlibs.net/datasets/kitti/eval_tracking.php).
-[2022-08-04]  we rank **first** among all methods on **nuScenes** Dataset for [Tracking](https://www.nuscenes.org/tracking?externalData=all&mapData=all&modalities=Any). 
+- 2022-08-03  we rank **4th** among all methods on **KITTI** Dataset for [MOT](http://www.cvlibs.net/datasets/kitti/eval_tracking.php).
+- 2022-08-04  we rank **first** among all methods on **nuScenes** Dataset for [Tracking](https://www.nuscenes.org/tracking?externalData=all&mapData=all&modalities=Any). 
 
 We are still working on writing the documentations and cleaning up the code. And We will release our model on **nuScenes/KITTI** as soon as possible. :smiley:
 
@@ -35,6 +35,8 @@ You can find detailed results on KITTI **test** set on this [website](http://www
  
 You can find detailed results on nuScenes **test** set on this [website](https://eval.ai/web/challenges/challenge-page/476/leaderboard/1321).
 Or you can view the accuracy trend of MOT algorithms on this [website](https://paperswithcode.com/sota/3d-multi-object-tracking-on-nuscenes?p=bevfusion-multi-task-multi-sensor-fusion-with)
+
+ ### Multi-object tracking(on nuScenes val set)
 
  Method         | AMOTA    | AMOTP   
 --------------- |:--------:|:--------:
