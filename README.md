@@ -55,7 +55,7 @@ In the detection part, many thanks to the following open-source projects:
 - [CenterPoint](https://github.com/tianweiy/CenterPoint)
 - [FocalConv](https://github.com/dvlab-research/FocalsConv)
 - [BEVFusion](https://github.com/mit-han-lab/bevfusion)
-- We especially thank Yukang@yukang2017([FocalConv](https://github.com/dvlab-research/FocalsConv)) for his help.
+- We especially thank Yukang@yukang([FocalConv](https://github.com/dvlab-research/FocalsConv)) for his help.
 
 In the tracking part, many thanks to the following open-source projects:
 - [DEFT](https://github.com/MedChaabane/DEFT)
