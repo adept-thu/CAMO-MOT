@@ -4,8 +4,8 @@ This is the official code release of the paper [CAMO-MOT: Combined Appearance-Mo
 
 ## News
 
-- 2022-08-04  we rank **first** among all methods on **nuScenes** Dataset for [Tracking](https://www.nuscenes.org/tracking?externalData=all&mapData=all&modalities=Any):blush:. 
-- 2022-08-03  we rank **4th** among all methods on **KITTI** Dataset for [MOT](http://www.cvlibs.net/datasets/kitti/eval_tracking.php):grinning:.
+- 2022-08-04.  We rank **first** among all methods on **nuScenes** Dataset for [Tracking](https://www.nuscenes.org/tracking?externalData=all&mapData=all&modalities=Any):blush:. 
+- 2022-08-03.  We rank **4th** among all methods on **KITTI** Dataset for [MOT](http://www.cvlibs.net/datasets/kitti/eval_tracking.php):grinning:.
 
 We are still working on writing the documentations and cleaning up the code. And we will release our model on **nuScenes/KITTI** and paper as soon as possible:smiley:.
 
