@@ -18,7 +18,7 @@ We are still working on writing the documentations and cleaning up the code. And
  CAMO-MOT       | 0.753    | 0.472
  
 You can find detailed results on nuScenes **test** set on this [website](https://eval.ai/web/challenges/challenge-page/476/leaderboard/1321).
-Or you can view the accuracy trend of MOT algorithms on this [website](https://paperswithcode.com/sota/3d-multi-object-tracking-on-nuscenes?p=bevfusion-multi-task-multi-sensor-fusion-with)
+Or you can view the accuracy trend of MOT algorithms on this [website](https://paperswithcode.com/sota/3d-multi-object-tracking-on-nuscenes)
 
 ### Multi-object tracking(on nuScenes val set)
 
