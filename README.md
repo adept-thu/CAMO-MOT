@@ -62,6 +62,7 @@ In the detection part, many thanks to the following open-source projects:
 In the tracking part, many thanks to the following open-source projects:
 - [DEFT](https://github.com/MedChaabane/DEFT)
 - [EagerMOT](https://github.com/aleksandrkim61/EagerMOT)
+- [PC3T](https://github.com/TRI-ML/permatrack)
 
 ## Citation
 If you find our paper or code useful for you, please consider cite us by:grin::
