@@ -23,11 +23,9 @@ Or you can view the accuracy trend of MOT algorithms on this [website](https://p
 
 ### Multi-object tracking(on nuScenes val set)
 
- Tracker        | Detector              | AMOTA    | AMOTP   
---------------- |:---------------------:|:--------:|:--------:
- CAMO-MOT       | FocalConv+BEVFusion   | 0.763    | 0.527
- CAMO-MOT       | BEVFusion             | 0.761    | 0.561
- CAMO-MOT       | FocalConv             | 0.753    | 0.527
+ Tracker        | AMOTA    | AMOTP   
+--------------- |:--------:|:--------:
+ CAMO-MOT       | 0.763    | 0.527
  
 On nuScenes, we use [BEVFusion](https://github.com/mit-han-lab/bevfusion) and [FocalConv](https://github.com/dvlab-research/FocalsConv) as our detectors.
 
