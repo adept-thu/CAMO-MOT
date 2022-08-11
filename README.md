@@ -15,7 +15,7 @@ We are still working on writing the documentations and cleaning up the code. And
 
  Method         | AMOTA    | AMOTP   
 --------------- |:--------:|:--------:
- CAMO-MOT       | 0.761    | 0.561
+ CAMO-MOT       | 0.753    | 0.472
  
  
 You can find detailed results on nuScenes **test** set on this [website](https://eval.ai/web/challenges/challenge-page/476/leaderboard/1321).
