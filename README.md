@@ -12,20 +12,22 @@ We are still working on writing the documentations and cleaning up the code. And
 ## Results
 
 ### Multi-object tracking(on nuScenes test set)
- 
+
  Method         | AMOTA    | AMOTP   
 --------------- |:--------:|:--------:
- CAMO-MOT       | 0.753    | 0.472
+ CAMO-MOT       | 0.761    | 0.561
+ 
  
 You can find detailed results on nuScenes **test** set on this [website](https://eval.ai/web/challenges/challenge-page/476/leaderboard/1321).
 Or you can view the accuracy trend of MOT algorithms on this [website](https://paperswithcode.com/sota/3d-multi-object-tracking-on-nuscenes)
 
 ### Multi-object tracking(on nuScenes val set)
 
- Method         | AMOTA    | AMOTP   
---------------- |:--------:|:--------:
- CAMO-MOT       | 0.761    | 0.561
-
+ Tracker        | Detector              | AMOTA    | AMOTP   
+--------------- |:---------------------:|:--------:|:--------:
+ CAMO-MOT       | FocalConv+BEVFusion   | 0.763    | 0.527
+ CAMO-MOT       | BEVFusion             | 0.761    | 0.561
+ CAMO-MOT       | FocalConv             | 0.753    | 0.527
  
 On nuScenes, we use [BEVFusion](https://github.com/mit-han-lab/bevfusion) and [FocalConv](https://github.com/dvlab-research/FocalsConv) as our detectors.
 
