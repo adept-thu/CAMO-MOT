@@ -66,15 +66,14 @@ In the tracking part, many thanks to the following open-source projects:
 ## Citation
 If you find our paper useful for you, please consider cite us by:grin::
 ```
-@misc{https://doi.org/10.48550/arxiv.2209.02540,
-  doi = {10.48550/ARXIV.2209.02540},
-  url = {https://arxiv.org/abs/2209.02540},
-  author = {Wang, Li and Zhang, Xinyu and Qin, Wenyuan and Li, Xiaoyu and Yang, Lei and Li, Zhiwei and Zhu, Lei and Wang, Hong and Li, Jun and Liu, Huaping},
-  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {CAMO-MOT: Combined Appearance-Motion Optimization for 3D Multi-Object Tracking with Camera-LiDAR Fusion},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {arXiv.org perpetual, non-exclusive license}
-}
+@ARTICLE{10164676,
+  author={Wang, Li and Zhang, Xinyu and Qin, Wenyuan and Li, Xiaoyu and Gao, Jinghan and Yang, Lei and Li, Zhiwei and Li, Jun and Zhu, Lei and Wang, Hong and Liu, Huaping},
+  journal={IEEE Transactions on Intelligent Transportation Systems}, 
+  title={CAMO-MOT: Combined Appearance-Motion Optimization for 3D Multi-Object Tracking With Camera-LiDAR Fusion}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-16},
+  doi={10.1109/TITS.2023.3285651}}
 ```
 
